@@ -10,7 +10,13 @@ def consolidate_cart(cart)
     name=item.keys[0]
     price=item.values[0][:price]
     clearance=item.values[0][:clearance]
-    puts "Name=#{name}, price=#{price}, clearance=#{clearance}"
+    if consolidatedcart.keys.include?(name)
+      consolidatedcart[name][:count]=consolidatedcart[name][:count]+1
+    else
+      consolidatedcart[name][:price]=price
+      consolidatedcart[name][:clearance]=clearance
+      consolidatedcart[name][:count]=1
+    end
   end
   return consolidatedcart
 end
