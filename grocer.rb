@@ -30,10 +30,6 @@ def apply_coupons(cart, coupons)
       number=cart[item][:count]
       bundlesize=coupon[:num]
       bundlecost=coupon[:cost]
-      while cart[item][:count]>=bundlesize
-        cart[item][:count]=cart[item][:count]-bundlesize
-        bundles=bundles+1
-      end
       couponstring=item+" W/COUPON"
       cart[couponstring]={price: bundlecost, clearance: cart[item][:clearance], count:bundles}
     end
