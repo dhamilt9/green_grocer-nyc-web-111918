@@ -58,9 +58,10 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  if coupons.length>0
-    cart=apply_coupons(cart, coupons)
-  end
+  puts "Checking out"
+  puts "Cart=#{cart}"
+  puts "Coupons=#{coupons}"
+  cart=apply_coupons(cart, coupons)
   cart=apply_clearance(cart)
   total=0
   cart.each do |item, data|
