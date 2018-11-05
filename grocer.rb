@@ -38,6 +38,7 @@ def apply_coupons(cart, coupons)
       cart[couponstring]={price: bundlecost, clearance: cart[item][:clearance], count:bundles}
     end
   end
+  puts cart
   return cart
 end
 
