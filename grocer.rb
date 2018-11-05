@@ -64,4 +64,5 @@ def checkout(cart, coupons)
   cart.each do |item, data|
     total=total+data[:price]
   end
+  return total
 end
