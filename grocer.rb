@@ -24,8 +24,8 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
+    bundles=0
     if cart.keys.include?(coupon[:item])
-      bundles=0
       item=coupon[:item]
       number=cart[item][:count]
       bundlesize=coupon[:num]
