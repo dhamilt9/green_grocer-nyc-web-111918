@@ -7,9 +7,9 @@ cart=[
 def consolidate_cart(cart)
   consolidatedcart={}
   cart.each do |item|
-    name=item[:item]
-    price=item[:price]
-    clearance=item[:clearance]
+    name=item.keys[0]
+    price=item.values[0][:price]
+    clearance=item.values[0][:clearance]
     if consolidatedcart.keys.include?(name)
       consolidatedcart[name][:count]=consolidatedcart[name][:count]+1
     else
@@ -38,6 +38,7 @@ def apply_coupons(cart, coupons)
       cart[couponstring]={price: bundlecost, clearance: cart[item][:clearance], count:bundles}
     end
   end
+  return cart
 end
 
 def apply_clearance(cart)
