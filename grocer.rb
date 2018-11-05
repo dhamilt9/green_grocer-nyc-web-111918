@@ -23,7 +23,21 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  # code here
+  coupons.each do |coupon|
+    if cart.keys.include?(coupon[:item])
+      bundles=0
+      item=coupon[:item]
+      number=cart[item][:count]
+      bundlesize=coupon[:num]
+      bundlecost=coupon[:cost]
+      while cart[item][:count]>=bundlesize
+        cart[item][:count]=cart[item][:count]-bundlesize
+        bundles+=1
+      end
+      couponstring=item+" W/COUPON"
+      cart[couponstring]={price: bundlecost, clearance: cart[item][:clearance], count:bundles}
+    end
+  end
 end
 
 def apply_clearance(cart)
