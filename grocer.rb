@@ -51,7 +51,6 @@ end
 def apply_clearance(cart)
   puts "Applying clearance to cart #{cart}"
   cart.each do |itemname, itemdata|
-    puts "Item data = #{itemdata}"
     if itemdata[:clearance]==true
       itemdata[:price]=itemdata[:price]-itemdata[:price]*0.2
     end
@@ -60,9 +59,6 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  puts "Checking out"
-  puts "Cart=#{cart}"
-  puts "Coupons=#{coupons}"
   cart=apply_coupons(cart, coupons)
   cart=apply_clearance(cart)
   total=0
