@@ -49,6 +49,7 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
+  puts "Applying clearance to cart #{cart}"
   cart.each do |itemname, itemdata|
     puts "Item data = #{itemdata}"
     if itemdata[:clearance]==true
