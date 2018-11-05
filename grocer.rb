@@ -60,8 +60,11 @@ end
 def checkout(cart, coupons)
   puts "Checking out #{cart} with #{coupons}"
   cart=consolidate_cart(cart)
+  puts "Consolidated cart: #{cart}"
   cart=apply_coupons(cart, coupons)
+  puts "Couponed cart: #{cart}"
   cart=apply_clearance(cart)
+  puts "Clearenced cart: #{cart}"
   total=0
   cart.each do |item, data|
     total=total+data[:price]
