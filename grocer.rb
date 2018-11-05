@@ -13,6 +13,7 @@ def consolidate_cart(cart)
     if consolidatedcart.keys.include?(name)
       consolidatedcart[name][:count]=consolidatedcart[name][:count]+1
     else
+      consolidatedcart[name]={}
       consolidatedcart[name][:price]=price
       consolidatedcart[name][:clearance]=clearance
       consolidatedcart[name][:count]=1
