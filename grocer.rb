@@ -7,6 +7,7 @@ def consolidate_cart(cart)
       consolidatedcart[item]=itemdata
     end
   end
+  return consolidatedcart
 end
 
 def apply_coupons(cart, coupons)
