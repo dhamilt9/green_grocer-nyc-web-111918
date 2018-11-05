@@ -2,10 +2,8 @@ def consolidate_cart(cart)
   consolidatedcart={}
   cart.each do |item, itemdata|
     if consolidatedcart.keys.include?(item)
-      consolidatedcart[item][:count]+=1
     else
       consolidatedcart[item]=itemdata
-      consolidatedcart[item][:count]=1
     end
   end
 end
