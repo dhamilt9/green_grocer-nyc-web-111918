@@ -7,7 +7,7 @@ cart=[
 def consolidate_cart(cart)
   consolidatedcart={}
   cart.each do |item|
-    puts item.keys
+    puts item.keys[0]
   end
   return consolidatedcart
 end
