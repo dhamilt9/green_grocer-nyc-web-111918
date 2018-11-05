@@ -24,8 +24,7 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
-    bundles=0
-    if cart.keys.include?(coupon[:item])
+    if cart.keys.include?(coupon[:item]) && !cart.keys.include?("#{coupon[:item]} W/COUPON")
       item=coupon[:item]
       number=cart[item][:count]
       bundlesize=coupon[:num]
@@ -35,7 +34,7 @@ def apply_coupons(cart, coupons)
         bundles=bundles+1
       end
       couponstring=item+" W/COUPON"
-      cart[couponstring]={price: bundlecost, clearance: cart[item][:clearance], count:bundles}
+      cart[couponstring]={price: bundlecost, clearance: cart[item][:clearance], count:1}
     end
   end
   return cart
