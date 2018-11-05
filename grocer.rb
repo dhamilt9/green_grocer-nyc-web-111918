@@ -2,6 +2,7 @@ def consolidate_cart(cart)
   consolidatedcart={}
   cart.each do |item, itemdata|
     if consolidatedcart.keys.include?(item)
+      puts "Exists"
     else
       consolidatedcart[item]=itemdata
     end
