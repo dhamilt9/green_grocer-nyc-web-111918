@@ -33,5 +33,3 @@ end
 def checkout(cart, coupons)
   # code here
 end
-
-puts consolidate_cart(cart)
